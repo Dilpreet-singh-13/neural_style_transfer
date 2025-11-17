@@ -8,3 +8,9 @@ wheels/
 
 # Virtual environments
 .venv
+
+
+# extra files
+sample_usage.mp4
+fast_neural_style_transfer_project_report.*
+project_presentation.pdf

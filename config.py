@@ -3,7 +3,7 @@ import os
 from torchvision import transforms
 
 # global config
-COCO_TRAIN_IMAGES = "/kaggle/input/coco-2017-dataset/coco2017/train2017"
+COCO_TRAIN_IMAGES = "/data/coco-2017-dataset/coco2017/train2017"  # path pointing to the train data folder
 STYLE_IMAGE_PATH = "images/style_image.jpg"
 OUTPUT_DIR = "./"
 

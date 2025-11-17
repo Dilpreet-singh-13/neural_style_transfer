@@ -22,12 +22,20 @@ This implementation is based on the paper [Perceptual Losses for Real-Time Style
   <img src="images/output_stylized.jpg" alt="After" width="300" />
 </p>
 
+<p align="left">
+  <img src="images/god_of_war.png" alt="Before" width="300" />
+  &nbsp;&nbsp;&nbsp;
+  <img src="images/god_of_war_stylized_img_1.jpg" alt="After" width="300" />
+</p>
+
 
 > *Training the netork on more images and adjusting the hyperparameters will result in better and more accurate results*
 
 ## 🚀 How to Use
 
 We recommend using `uv` package manager for python projects, but feel free to use `pip`.
+
+All the dependencies are listed in `pyproject.toml` and `uv.lock` files.
 
 ### Inference only
 
@@ -41,15 +49,31 @@ You can stylize any image using the trained model weights (from `models/`). The 
 
 ### Training 
 
-**NOTE:** These steps are for training on Kaggle with a GPU enabled using the `neural-style-transfer.ipynb` notebook from (`notebooks/`).
+1. Clone the project and install dependencies
+```bash
+git clone https://github.com/Dilpreet-singh-13/neural_style_transfer.git
+cd neural_style_transfer
+# Create a virtual environment
+uv venv
+.venv\Scripts\activate  # On Unix or MacOS use `source .venv/bin/activate`
+# Install dependencies
+uv sync
+```
 
-1. Upload the `neural-style-transfer.ipynb` notebook to Kaggle.
-2. Enable a GPU accelerator. (Settings > accelerator > P100)
-3. Mount/add the COCO2017 dataset in the notebook environment.
-4. Upload the style image you want.
-5. Change the global config paths accordingly.
-6. Run the whole notebook.
+2. Download the [COCO dataset](https://cocodataset.org/#download) and put it in the `data/` directory.
+3. Change configs in `config.py` as per requirement.
+4. Start the training, run `uv run train.py` or `python train.py`
 
+> *Ensure you have a good GPU for training.*
+
+**Notebook style training for platforms like kaggle**
+
+  1. Upload the `neural-style-transfer.ipynb` notebook from `notebooks/` to Kaggle.
+  2. Enable a GPU accelerator. (Settings > accelerator > P100)
+  3. Mount/add the COCO2017 dataset in the notebook environment.
+  4. Upload the style image you want.
+  5. Change the global config paths accordingly.
+  6. Run the whole notebook.
 
 ## 📊 Dataset
 
